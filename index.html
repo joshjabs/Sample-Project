@@ -8,31 +8,85 @@
 
     <title>First Website</title>
 
-    <link rel="stylesheet" href="css/menu.css">
+    <!-- Bootstrap CSS from CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <!-- <link rel="stylesheet" href="css/menu.css"> -->
 
 </head>
 
 <body>
 
-    <div class="topNav">
+    <!-- Bootstrap Nav Menu -->
+    <nav class="nav">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="#container">Container</a>
+        <a class="nav-link" href="pages/about.html">About</a>
+        <a class="nav-link disabled" href="pages/page2.html">Page 2</a>
+    </nav>
+
+    <!-- OLD NAV MENU
+        
+        <div class="topNav">
         <a href="index.html">Home</a>
         <a href="pages/about.html">About</a>
         <a href="pages/page2.html">Page 2</a>
-    </div>
+    </div> -->
 
-    <div class="container">
-
-        <button onclick="giveMessage()">
-            Give Value of C
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1024-512,f_auto,q_auto:best/newscms/2019_33/2203981/171026-better-coffee-boost-se-329p.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.incimages.com/uploaded_files/image/1920x1080/getty_938993594_391384.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.mashed.com/img/gallery/coffee-mistakes-youre-probably-making-at-home/intro-1594766282.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
         </button>
-
-        <button onclick="sum()">
-            Sum
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
         </button>
+      </div>
 
+
+    <div id="container">
+        <input type="text" value="Name" id="inputField">
+        <input type="color" name="colorPicker" id="colorPicker">
+        <button id="actionButton" class="btn btn-primary" onclick="action()">ACTION</button>
     </div>
+    
+    <script>
+
+        function action() {
+            var myName = document.getElementById("inputField").value
+            var color = document.getElementById("colorPicker").value
+            console.log(myName + " - " + color)
+
+            if( myName == "Mike"){
+                console.log("Mike is a super cool guy!")
+            } else {
+                console.log("I don't know who you are")
+            }
+        }
+
+
+    </script>
+
 
     <script src="js/scripts.js"></script>
+
+    <!-- Bootstrap JS from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
 
 </body>
 
