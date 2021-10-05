@@ -3,7 +3,7 @@
 
 <head>
     <title>Form</title>
-    
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -44,32 +44,47 @@
         <!-- b4-input -->
         <div class="form-group">
           <label for="">Name:</label>
-          <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
-          <small id="helpId" class="form-text text-muted">Help text</small>
+          <input type="text" class="form-control" name="" id="name" aria-describedby="helpId" placeholder="">
+          <small id="helpId" class="form-text text-muted">Your First Name</small>
         </div>
 
         <!-- b4-checkbox -->
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
-            Display value
+            <input type="checkbox" class="form-check-input" name="" id="hasGraduated" value="checkedValue" checked>
+            Has Graduated
           </label>
         </div>
 
         <!-- b4-textarea -->
         <div class="form-group">
-          <label for="">Text Area:</label>
-          <textarea class="form-control" name="" id="" rows="3"></textarea>
+          <label for="">Bio:</label>
+          <textarea class="form-control" name="" id="bio" rows="3"></textarea>
         </div>
-        
+
+        <button type="button" class="btn btn-primary" id="submit" onclick="buildPerson()">
+            Build Person
+        </button>
     </div>
-    
-        
-        
-    
 
 
 
+    <!-- Custom Form Javascript -->
+
+    <script>
+
+        function buildPerson() {
+            console.log("we are going to build a js object")
+
+            var name = document.getElementById("name").value;
+            var hasGraduated = document.getElementById("hasGraduated").value;
+            var bio = document.getElementById("bio").value; //innerHTML
+
+            console.log("Values: " + name + " " + hasGraduated + " " + bio)
+        }
+
+    </script>
+     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
