@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <script>
+        function saveJedi( jedi ) {
+
+            // Store into Local Storage
+            localStorage.setItem("jedi", jedi )
+        }
+
+        function getAllJedi() {
+            var allJedi = localStorage.getItem("jedi")
+            console.log( allJedi )
+        }
+
+        function trainJedi() {
+
+            console.log("creating Jedi...")
+
+            // Grab the data of all input elements
+            var jediName = document.getElementById("jediName").value //innerHTML
+            var hasForcePower = document.getElementById("hasForcePowers").value
+            var lightsaberColor = document.getElementById("lightsaberColor").value
+
+            // Create Jedi Object
+            var jedi = {
+                name: jediName,
+                power: hasForcePower,
+                lightsaber: lightsaberColor
+            }
+
+            console.log("created Jedi : " + jedi.name + " " + jedi.power + " " + jedi.lightsaber)
+
+            saveJedi( jedi )
+        }
+    </script>
+
+    <center>
+        <h1>Jedi Academy</h1>
+
+        <br>
+
+        <div class="container-fluid">
+            <input type="text" id="jediName">
+            <input type="checkbox" name="hasForcePowers" id="hasForcePowers">
+            <input type="color" name="lightsaber" id="lightsaberColor">
+
+            <br><br>
+
+            <button id="trainButton" onclick="trainJedi()">Train</button>
+
+            <br><br>
+
+            <button onclick="getAllJedi()">Get All Jedi from Storage</button>
+        </div>
+
+    </center>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
